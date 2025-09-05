@@ -18,7 +18,7 @@
 
     .wrapper {
             width: 100%;
-            height: 60rem; /* fixed image height */
+            height: auto; /* fixed image height */
             display: flex;
             position: relative;
             box-shadow: 2px 25px 30px rgba(73, 73, 73, 0.4); 
@@ -56,14 +56,14 @@
     }
 
     .text h1 {
-    font-size: 5rem;
+    font-size: clamp(1rem, 5vw, 5rem);
     margin: 0 0 1rem 0;
     font-weight: 500;
     white-space: nowrap;
     }
 
     .text p {
-    font-size: 1.9rem;
+    font-size: clamp(1rem, 1vw, 1.9rem);
     margin: 0;
     font-weight: 300;
     }
@@ -202,6 +202,69 @@
         from {opacity: 0;}
         to {opacity: 2;}
     }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+    .parag p, .ps p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+        padding: 0 1rem;
+        text-align: justify;
+        margin: 0 20px;
+    }
+
+    .cor h1, .nepo h1, .soho h1 {
+        font-size: 1.9rem;
+        line-height: 2.5rem;
+        padding: 0 1rem;
+    }
+
+    .corrupt {
+        display: block;
+        align-items: center;
+        max-width: 1500px;
+    }
+
+    .corrupt p {
+        text-align: justify;
+        text-justify: inter-word;
+        position: relative;
+    }
+
+    .corrupt img {
+        max-width: 50%;
+        margin-left: 100px;
+    }
+
+    .rectangle {
+        width: 85%;
+        height: auto;
+    }
+
+    .rectangle img {
+        width: 100%;
+        height: auto;
+    }
+
+    .soho h1 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .soho p {
+        font-size: 1rem;
+    }
+
+    .watermark {
+        height: 40px;
+    }
+
+    .watermark h2 {
+        font-size: 0.8rem;
+        margin-top: 10px;
+    }
+}
+
 
 </style>
 </head>
