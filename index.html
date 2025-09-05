@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <title>Corrupt</title>
+
+<style>
+    body {
+        background-color: #EEECE8;
+        margin: 0;
+        padding: 0;
+    }
+
+    .wrapper {
+            width: 100%;
+            height: 60rem; /* fixed image height */
+            display: flex;
+            position: relative;
+            box-shadow: 2px 25px 30px rgba(73, 73, 73, 0.4); 
+            margin: 0;
+    }
+
+    img.flood {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        filter: grayscale(60%);
+    }
+    .wrapper::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(63, 63, 63, 0.3), rgba(26, 26, 26, 0.9));
+        z-index: 1;
+    }
+
+    .text {
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+    color: #EEECE8;
+    font-family: 'Lora', serif;
+    /* remove the fixed margin-left/margin-top for better responsiveness */
+    top: 50%;  
+    left: 50%;
+    transform: translate(-50%, -50%); /* perfectly center */
+    line-height: 1;
+    text-shadow: rgb(44, 44, 44) 7px 1px 8px;
+    }
+
+    .text h1 {
+    font-size: 5rem;
+    margin: 0 0 1rem 0;
+    font-weight: 500;
+    white-space: nowrap;
+    }
+
+    .text p {
+    font-size: 1.9rem;
+    margin: 0;
+    font-weight: 300;
+    }
+
+    hr {
+        border: none;
+        margin: 4rem auto;
+        border-top: 1px solid rgb(94, 94, 94);
+        width: 75%;
+    }
+
+    .parag p {
+        align-items: center;
+        text-align: center;
+        font-size: 1.6rem;
+        margin: 30px auto;
+        max-width: 59em;
+        color: rgba(54,54,54);
+        line-height: 2.5rem;
+    }
+
+    .cor h1 {
+        text-align: center;
+        font-family: "Lora";
+        color: rgb(58, 57, 57);
+        font-size: 3rem;
+    }
+
+    .corrupt {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        max-width: 100rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .corrupt p {
+        text-align: left;
+        margin: 0;
+        max-width: 46em;
+        margin-top: 60px;
+        line-height: 3rem;
+    }
+
+    .corrupt img {
+        align-items: flex-end;
+        margin: 30 auto;
+        max-width: 7000px;
+        height: auto;
+        filter: drop-shadow(5px 5px 5px rgba(24, 24, 24, 0.5));
+        margin-bottom: 50px;
+    }
+
+    .nepo h1 {
+        text-align: center;
+        font-family: "Lora";
+        color: rgb(58, 57, 57);
+        font-size: 3rem;
+    }
+
+    .rectangle {
+        width: 90rem;
+        height: 20rem;
+        border-radius: 20px;
+        background-color: #3d3d3d;
+        margin: 0 auto;
+        margin-bottom: 5rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rectangle img {
+        max-width: 90%;
+        max-height: 100%;
+        filter: drop-shadow(8px 4px 5px rgba(68, 14, 14, 0.5));
+    }
+
+    .ps p {
+        text-align: left;
+        font-size: 1.5rem;
+        margin: 0 auto;
+        max-width: 60em;
+        line-height: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .soho {
+        margin: 0 auto;
+        margin-bottom: 10px;
+        color: rgb(49, 47, 47);
+        animation: fadeIn 2s ease-in;
+    }
+
+    .soho h1 {
+        margin: 0 auto;
+        text-align: center;
+        font-family: 'Lora' serif ;
+        font-size: 4rem;
+        max-width: 70rem;
+        line-height: 7rem;
+    }
+
+    .soho p {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .watermark {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        background-color: #3d3d3d;
+        color: #EEECE8;
+        overflow: hidden;
+    }
+
+    .watermark h2 {
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 15px;
+        opacity: 0.5;
+        animation: scroll-left 15s linear infinite;
+        display: inline-block;
+        white-space: nowrap;
+    }
+
+    @keyframes scroll-left {
+        from {transform: translateX(-100%)};
+        to {transform: translateX(100%)};
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 2;}
+    }
+
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <img src="flood.png " alt="" class="flood" >
+
+            <div class="text">
+                <h1>DROWNED BY CORRUPTION</h1>
+                <p>15 years. ₱1.9 trillion. Thousands of lives still at risk.</p>
+        </div>
+    </div>
+
+    <hr>
+<div class="wow" data-aos="fade-up" data-aos-duration="1000">
+    <div class="parag">
+        <p>While floodwaters rise and families cling to rooftops, billions meant to protect them are
+            quietly stolen. Year after year, promises are made — better drainage, stronger levees, safer
+            cities. But the floods keep coming, and so does the silence. Behind every submerged home
+            is a budget that was misused, a project that was never built, a system rigged for profit
+            instead of protection. This isn’t just about missing money — it’s about lives lost, futures
+            washed away, and a nation drowning in betrayal. It's time to face the truth.
+        </p>
+
+    <hr>
+
+    <div class="cor"><h1>Who are the Corrupt?</h1></div>
+        <div class="corrupt">
+            
+            <p>Among the 15 contractors flagged by President Marcos for monopolizing flood control projects,
+                Sunwest, Inc. stands at the top — securing over ₱10.1 billion in government contracts. Behind Sunwest, Inc is Zaldy Co, a businessman
+                and the father of Ako Bicol Rep. Elizaldy "Zaldy" Co, a powerful House appropriations committee chair. But while they received billions, many families
+                were left with nothing. No drainage. No protection. Just floods, fear, and broken promises. People lost their homes. Some lost their lives. And yet, the
+                ones with the money stayed dry.</p>
+
+            <img src="zaldyco.png" alt="">
+        </div>
+    </div>
+
+
+
+    <div class="nepo">
+        <h1>Nepo Babies?</h1>
+    </div>
+
+    <div class="rectangle">
+        <img src="disney.png" alt="">
+    </div>
+
+    <div class="ps">
+        <p>While ordinary Filipinos work hard, pay taxes, and suffer through floods, a privileged few enjoy lives of luxury — made possible by money that was never meant for them.</p>
+        <p>Billions in public funds were allocated for flood control, safety, and infrastructure. Yet instead of drainage systems and disaster protection, we see luxury bags, private jets,
+           and lavish vacations — all flaunted online by those born into powerful families tied to government contracts.</p>
+        <p>They didn’t earn it. <strong>We did</strong>. With every tax we pay, every peso deducted from our salary, we unknowingly help fund their lifestyle — while our streets flood and our
+           communities are left in danger.</p>
+        <p>This is not just corruption. It’s betrayal — a system where those with the right last name live in comfort, while the rest of the country is left to survive the consequences.</p>
+    </div>
+</div>
+    <hr>
+
+    <div class="soho">
+        <h1>"Hindi pala baha ang magpapalubog sa ating bayan, kundi kasakikman"</h1>
+        <p>- Jessica Soho</p>
+    </div>
+
+    <div class="watermark">
+        <h2>Jae Anne Rose Jae Anne Rose Jae Anne Rose Jae Anne Rose Jae Anne Rose Jae Anne Rose Jae Anne Rose Jae Anne Rose Jae Anne Rose Jae Anne Rose Jae Anne
+            Rose Jae Anne Rose Jae Anne Rose Jae Anne Rose Jae Anne Rose Jae Anne Rose Jae Anne Rose Jae Anne Rose Jae Anne Rose Jae Anne Rose</h2>
+    </div>
+
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
